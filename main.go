@@ -121,6 +121,7 @@ func handlePostWeather(w http.ResponseWriter, r *http.Request) {
 
 	json.NewEncoder(w).Encode(weather)
 }
+
 //Created by Syed Abdul Qadeer - 500228186
 
 func main() {
@@ -136,5 +137,5 @@ func main() {
 	})
 
 	fmt.Println("Server listening on port 3001...")
-	http.ListenAndServe(":3001", nil)
+	http.ListenAndServe(":3001", nil)
 }
