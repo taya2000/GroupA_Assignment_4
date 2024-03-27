@@ -62,12 +62,6 @@ func getWeather(city string) (*Weather, error) {
 	// Format the temperature in Celsius with one decimal place and append the unit "°C"
 	temperatureString := fmt.Sprintf("%.1f°C", temperatureCelsius)
 
-	// Return a pointer to a new Weather struct instance initialized with the extracted data
-	return &Weather{
-		City:        city,
-		Temperature: temperatureString,
-	}, nil
-
 	//Created by Samhitha Dubbaka  - 500225971
 	// Extract main weather data
 	weather := weatherData["weather"].([]interface{})[0].(map[string]interface{})["main"].(string)
@@ -107,10 +101,11 @@ func handleGetWeather(w http.ResponseWriter, r *http.Request) {
 
 	json.NewEncoder(w).Encode(weather)
 }
+
 // Created by Abhisheik Yadla -
 func handlePostWeather(w http.ResponseWriter, r *http.Request) {
 	var requestBody struct {
-		Name string json:"name";
+		Name string `json:"name"`
 	}
 
 	if err := json.NewDecoder(r.Body).Decode(&requestBody); err != nil {
