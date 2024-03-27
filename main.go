@@ -67,4 +67,27 @@ func getWeather(city string) (*Weather, error) {
 		City:        city,
 		Temperature: temperatureString,
 	}, nil
+
+	//Created by Samhitha Dubbaka  - 500225971
+	// Extract main weather data
+	weather := weatherData["weather"].([]interface{})[0].(map[string]interface{})["main"].(string)
+
+	// Extract feelslike data
+	feelsLikeValue := weatherData["main"].(map[string]interface{})["feels_like"].(float64)
+
+	// Deduct celciusValue from the feelslike value to convert it to Celsius
+	feelsLikeCelsius := feelsLikeValue - celciusValue
+
+	// Format the feelslike in Celsius with one decimal place and append the unit "°C"
+	feelsLikeString := fmt.Sprintf("%.1f°C", feelsLikeCelsius)
+
+	// Return a pointer to a new Weather struct instance initialized with the extracted data
+	return &Weather{
+		City:        city,
+		Temperature: temperatureString,
+		FeelsLike:   feelsLikeString,
+		Weather:     weather,
+	}, nil
 }
+
+
