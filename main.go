@@ -107,3 +107,22 @@ func handleGetWeather(w http.ResponseWriter, r *http.Request) {
 
 	json.NewEncoder(w).Encode(weather)
 }
+// Created by Abhisheik Yadla -
+func handlePostWeather(w http.ResponseWriter, r *http.Request) {
+	var requestBody struct {
+		Name string json:"name";
+	}
+
+	if err := json.NewDecoder(r.Body).Decode(&requestBody); err != nil {
+		http.Error(w, "Invalid request body", http.StatusBadRequest)
+		return
+	}
+
+	weather, err := getWeather(requestBody.Name)
+	if err != nil {
+		http.Error(w, "Failed to fetch weather data", http.StatusInternalServerError)
+		return
+	}
+
+	json.NewEncoder(w).Encode(weather)
+}
