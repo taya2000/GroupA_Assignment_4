@@ -104,13 +104,13 @@ We improve our project's usefulness by giving customers useful weather informati
 
 We collaborated on this project as a team. Following are our members:
 
-* Tejaswi Cheripally
-* Pamodi Bhagya Rathnayake
-* Samhitha Dubbaka
-* Abhisheik Yadla
-* Mohammed Abdul Bari waseem
-* Rohit
-* Syed Abdul Qadeer
-* Shubham Bathla
-* Mandeep Bajwa
-* Kamalpreet Kaur
+* Tejaswi Cheripally - 500229934
+* Pamodi Bhagya Rathnayake - 500229522
+* Samhitha Dubbaka - 500225971
+* Abhisheik Yadla - 500219580
+* Mohammed Abdul Bari waseem - 500225922
+* Rohit - 500230041
+* Syed Abdul Qadeer - 500228186
+* Shubham Bathla - 500232317
+* Mandeep Bajwa - 500209900
+* Kamalpreet Kaur - 500218943
