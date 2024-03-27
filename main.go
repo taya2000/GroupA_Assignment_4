@@ -121,3 +121,20 @@ func handlePostWeather(w http.ResponseWriter, r *http.Request) {
 
 	json.NewEncoder(w).Encode(weather)
 }
+//Created by Syed Abdul Qadeer - 500228186
+
+func main() {
+	http.HandleFunc("/city", func(w http.ResponseWriter, r *http.Request) {
+		switch r.Method {
+		case http.MethodGet:
+			handleGetWeather(w, r)
+		case http.MethodPost:
+			handlePostWeather(w, r)
+		default:
+			http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		}
+	})
+
+	fmt.Println("Server listening on port 3001...")
+	http.ListenAndServe(":3001", nil)
+}
