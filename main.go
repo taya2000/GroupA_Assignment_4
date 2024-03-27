@@ -90,4 +90,20 @@ func getWeather(city string) (*Weather, error) {
 	}, nil
 }
 
+// Created by Shubham Bathla - 500232317
+// Function erves as an HTTP handler for processing GET requests to fetch weather data for a specific city.
+func handleGetWeather(w http.ResponseWriter, r *http.Request) {
+	city := r.URL.Query().Get("name")
+	if city == "" {
+		http.Error(w, "Please include city name parameter", http.StatusBadRequest)
+		return
+	}
 
+	weather, err := getWeather(city)
+	if err != nil {
+		http.Error(w, "Failed to fetch weather data", http.StatusInternalServerError)
+		return
+	}
+
+	json.NewEncoder(w).Encode(weather)
+}
