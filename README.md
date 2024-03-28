@@ -93,6 +93,7 @@ curl -X POST http://localhost:3001/city -H "Content-Type: application/json" -d '
 * Response: The JSON format that the API typically delivers data in makes it simple to read and include into apps.
 * Integration: HTTP queries are used to query the relevant API endpoints in order to implement the OpenWeather API integration.
 * Data Handling: Our program parses and processes the weather data that has been retrieved to extract pertinent information for display or additional analysis.
+* Error Handling: When an API call fails or an invalid data is received, our program gracefully handles any potential errors or exceptions and gives users the necessary error messages.
 
 We improve our project's usefulness by giving customers useful weather information that is catered to their requirements and preferences by integrating the OpenWeather API into it.
 
